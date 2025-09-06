@@ -219,12 +219,13 @@
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
     .exit-modal {
-        max-width: 95%;
+        max-width: calc(100vw - 2rem);
+        width: 95%;
         margin: 1rem;
     }
     
     .social-notification {
-        max-width: 280px;
+        max-width: min(280px, calc(100vw - 40px));
     }
     
     .urgency-indicator {
@@ -237,6 +238,12 @@
 }
 
 @media (max-width: 480px) {
+    .exit-modal {
+        max-width: calc(100vw - 1rem);
+        width: 95%;
+        margin: 0.5rem;
+    }
+    
     .exit-offer {
         padding: 1rem;
     }
@@ -246,7 +253,7 @@
     }
     
     .social-notification {
-        max-width: 260px;
+        max-width: min(260px, calc(100vw - 40px));
         padding: 0.75rem 1rem;
     }
     
