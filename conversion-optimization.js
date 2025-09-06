@@ -1,6 +1,17 @@
 // Conversion Optimization Features for Revyval System
 // Based on top supplement brand strategies
 
+// Scroll to Longevity Tools Function
+function scrollToLongevityTools() {
+    const interactiveSection = document.querySelector('.interactive-section');
+    if (interactiveSection) {
+        interactiveSection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+    }
+}
+
 // Exit Intent Modal
 let exitIntentTriggered = false;
 
