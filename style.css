@@ -2284,13 +2284,15 @@ h3 {
   .nav-brand {
     font-size: 1.25rem;
     font-weight: 600;
+    text-align: center;
   }
   
   .nav-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
+    position: relative;
   }
   
   .nav-links {
@@ -2299,6 +2301,8 @@ h3 {
   
   .hamburger-menu {
     display: flex;
+    position: absolute;
+    right: 0;
   }
   
   /* Hero Section */
