@@ -952,7 +952,23 @@ function initBioAgeQuiz() {
   }
 }
 
-// VIP Signup Modal
+// VIP Signup Modal Functions
+function openSignupModal() {
+  const modal = document.getElementById('signup-modal');
+  if (modal) {
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+}
+
+function closeSignupModal() {
+  const modal = document.getElementById('signup-modal');
+  if (modal) {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
 function initSignupModal() {
   const modal = document.getElementById('signup-modal');
   const openBtn = document.getElementById('open-signup-modal');
@@ -970,25 +986,22 @@ function initSignupModal() {
   
   // Close modal
   if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    });
+    closeBtn.addEventListener('click', closeSignupModal);
   }
   
   // Close on overlay click
-  modal.addEventListener('click', (e) => {
-    if (e.target === modal) {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
-    }
-  });
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeSignupModal();
+      }
+    });
+  }
   
   // Close on escape key
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal.classList.contains('active')) {
-      modal.classList.remove('active');
-      document.body.style.overflow = '';
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
+      closeSignupModal();
     }
   });
   
