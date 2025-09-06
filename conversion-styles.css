@@ -1,0 +1,258 @@
+/* Conversion Optimization Styles */
+
+/* Exit Intent Modal */
+.exit-intent {
+    z-index: 1100;
+}
+
+.exit-modal {
+    max-width: 450px;
+    border: 2px solid #ffcc00;
+}
+
+.exit-offer {
+    background: linear-gradient(135deg, rgba(255, 204, 0, 0.1), rgba(255, 149, 0, 0.1));
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.exit-offer h4 {
+    color: #ffcc00;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+}
+
+.bonus-list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.bonus-list li {
+    padding: 0.5rem 0;
+    color: var(--text-primary, #1d1d1f);
+    font-size: 0.95rem;
+}
+
+.exit-cta {
+    background: linear-gradient(135deg, #ffcc00, #ff9500);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.exit-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 204, 0, 0.3);
+}
+
+.exit-timer {
+    text-align: center;
+    margin-top: 1rem;
+    color: #ff3b30;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+/* Urgency Indicator */
+.urgency-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 59, 48, 0.1);
+    border: 1px solid rgba(255, 59, 48, 0.2);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.urgency-dot {
+    width: 8px;
+    height: 8px;
+    background: #ff3b30;
+    border-radius: 50%;
+    animation: urgencyPulse 2s infinite;
+}
+
+@keyframes urgencyPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+.urgency-text {
+    color: #ff3b30;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Commitment Checkbox */
+.commitment-checkbox {
+    margin: 1rem 0;
+}
+
+.commitment-checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--text-primary, #1d1d1f);
+}
+
+.commitment-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #007aff;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.commitment-checkbox input[type="checkbox"]:checked + .checkmark {
+    background: #007aff;
+}
+
+.commitment-checkbox input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Social Proof in Modal */
+.social-proof {
+    background: rgba(52, 199, 89, 0.1);
+    border: 1px solid rgba(52, 199, 89, 0.2);
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem 0;
+}
+
+.testimonial-mini p {
+    font-style: italic;
+    color: var(--text-primary, #1d1d1f);
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+}
+
+.testimonial-mini span {
+    color: var(--text-secondary, #86868b);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Social Proof Notifications */
+.social-notification {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+    max-width: 300px;
+}
+
+.social-notification.show {
+    transform: translateX(0);
+}
+
+.social-notification.hide {
+    transform: translateX(-100%);
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.notification-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #007aff, #5856d6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.notification-text {
+    flex: 1;
+}
+
+.notification-text p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--text-primary, #1d1d1f);
+    line-height: 1.4;
+}
+
+.notification-time {
+    font-size: 0.75rem;
+    color: var(--text-secondary, #86868b);
+    margin-top: 0.25rem;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .exit-modal {
+        max-width: 95%;
+        margin: 1rem;
+    }
+    
+    .social-notification {
+        max-width: 280px;
+    }
+    
+    .urgency-indicator {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .urgency-text {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .exit-offer {
+        padding: 1rem;
+    }
+    
+    .bonus-list li {
+        font-size: 0.9rem;
+    }
+    
+    .social-notification {
+        max-width: 260px;
+        padding: 0.75rem 1rem;
+    }
+    
+    .notification-avatar {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+}
