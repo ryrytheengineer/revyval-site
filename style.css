@@ -2108,20 +2108,35 @@ h3 {
 
 /* Enhanced Mobile Responsiveness */
 @media (max-width: 768px) {
-  /* Navigation */
+  /* Navigation - Keep desktop styling */
   .nav {
-    width: calc(100% - 1rem);
-    padding: 0.75rem 1rem;
-    margin: 0.5rem;
+    width: calc(100% - 2rem);
+    padding: 1rem 2rem;
+    margin: 1rem;
+    backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 
+      0 8px 32px rgba(0, 0, 0, 0.1),
+      0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .nav-brand {
+    font-size: 1.25rem;
+    font-weight: 600;
   }
   
   .nav-links {
-    display: none;
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
   }
   
   .nav-cta {
-    padding: 0.5rem 1rem;
+    padding: 0.75rem 1.5rem;
     font-size: 0.9rem;
+    border-radius: 12px;
   }
   
   /* Hero Section */
@@ -2147,9 +2162,10 @@ h3 {
   }
   
   .pill-image {
-    width: 80px;
-    height: 80px;
-    margin: 2rem auto;
+    width: 120px;
+    height: 120px;
+    margin: 3rem auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
   }
   
   /* Buttons */
