@@ -24,8 +24,29 @@
         <a href="#founder">Joe Doit</a>
         <a href="#join" class="nav-cta">Join VIP Circle</a>
       </div>
+      <button class="hamburger-menu" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </nav>
+  
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+    <div class="mobile-menu">
+      <div class="mobile-menu-header">
+        <div class="mobile-brand">Revyval System</div>
+        <button class="close-menu" onclick="toggleMobileMenu()">×</button>
+      </div>
+      <div class="mobile-menu-links">
+        <a href="#system" onclick="toggleMobileMenu()">The System</a>
+        <a href="#founder" onclick="toggleMobileMenu()">Joe Doit</a>
+        <a href="#interactive" onclick="toggleMobileMenu()">Tools</a>
+      </div>
+      <button class="mobile-cta btn-magnetic" onclick="openSignupModal(); toggleMobileMenu();">Join VIP Circle</button>
+    </div>
+  </div>
 
   <!-- Hero Section -->
   <section class="hero">
