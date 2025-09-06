@@ -23,7 +23,7 @@
       <div class="nav-links">
         <a href="#system">The System</a>
         <a href="#founder">Joe Doit</a>
-        <a href="#join" class="nav-cta">Join VIP Circle</a>
+        <button class="nav-cta" onclick="openSignupModal()">Join VIP Circle</button>
       </div>
       <button class="hamburger-menu" onclick="toggleMobileMenu()">
         <span></span>
@@ -65,7 +65,7 @@
         Join Joe Doit's VIP Inner Circle and be the first to access the complete PM to AM Revyval System—your nightly reset for unstoppable mornings.
       </p>
       <div class="hero-cta scroll-animate">
-        <a href="#join" class="btn btn-primary btn-magnetic">⚡ Join VIP Inner Circle</a>
+        <button class="btn btn-primary btn-magnetic" onclick="openSignupModal()">⚡ Join VIP Inner Circle</button>
         <a href="#system" class="btn btn-secondary btn-magnetic">🔬 Learn More</a>
       </div>
     </div>
@@ -568,7 +568,7 @@
           <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-style: italic;">
             "The Revyval System optimizes your PM to AM cycle for maximum cellular regeneration"
           </p>
-          <button class="btn-calculate btn-magnetic" onclick="document.getElementById('signup-modal').classList.add('active'); document.body.style.overflow = 'hidden';">Join VIP List - Optimize My Sleep</button>
+          <button class="btn-calculate btn-magnetic" onclick="openSignupModal()">Join VIP List - Optimize My Sleep</button>
         </div>
       </div>
       
@@ -649,7 +649,7 @@
       <div class="bio-age-cta">
         <h3>Not Happy with Your Biological Age?</h3>
         <p>Let's make a change! Join thousands who've transformed their health and added years to their life with the Revyval System.</p>
-        <button class="clean-cta-button btn-magnetic" onclick="document.getElementById('signup-modal').classList.add('active'); document.body.style.overflow = 'hidden';">Join the VIP List</button>
+        <button class="clean-cta-button btn-magnetic" onclick="openSignupModal()">Join the VIP List</button>
       </div>
 
     </div>
