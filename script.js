@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    // Pill floating effect based on scroll
+    // Pill floating and rotation effect based on scroll
     const pillImage = document.querySelector('.pill-image');
     if (pillImage) {
       const pillContainer = pillImage.closest('.hero');
@@ -93,7 +93,8 @@ document.addEventListener('DOMContentLoaded', function() {
       if (rect.bottom >= 0 && rect.top <= windowHeight) {
         const progress = Math.max(0, Math.min(1, (windowHeight - rect.top) / windowHeight));
         const floatY = Math.sin(scrollY * 0.01) * 10 + progress * -20;
-        const rotateZ = Math.sin(scrollY * 0.008) * 2;
+        // Continuous clockwise rotation based on scroll position
+        const rotateZ = (scrollY * 0.2) % 360;
         
         pillImage.style.transform = `translateY(${floatY}px) rotate(${rotateZ}deg)`;
       }
