@@ -214,15 +214,15 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Smooth scrolling with easing
   function initSmoothScrolling() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
         
-        if (target) {
-          const navHeight = document.querySelector('.nav').offsetHeight;
-          const targetPosition = target.offsetTop - navHeight - 20;
-          
+      if (target) {
+        const navHeight = document.querySelector('.nav').offsetHeight;
+        const targetPosition = target.offsetTop - navHeight - 20;
+        
           // Custom smooth scroll with easing
           const startPosition = window.pageYOffset;
           const distance = targetPosition - startPosition;
@@ -247,15 +247,15 @@ document.addEventListener('DOMContentLoaded', function() {
           }
           
           requestAnimationFrame(animation);
-        }
-      });
+      }
     });
+  });
   }
-  
+
   // Enhanced VIP form with animations
   function initEnhancedForm() {
-    const vipForm = document.getElementById('vipForm');
-    if (vipForm) {
+  const vipForm = document.getElementById('vipForm');
+  if (vipForm) {
       const inputs = vipForm.querySelectorAll('input');
       const submitBtn = vipForm.querySelector('button[type="submit"]');
       
@@ -272,25 +272,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
       });
       
-      vipForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const email = document.getElementById('email').value;
-        const name = document.getElementById('name').value;
-        
+    vipForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const email = document.getElementById('email').value;
+      const name = document.getElementById('name').value;
+      
         // Validation with smooth error animations
-        if (!email || !name) {
-          showNotification('Please fill in all fields', 'error');
+      if (!email || !name) {
+        showNotification('Please fill in all fields', 'error');
           shakeForm();
-          return;
-        }
-        
-        if (!isValidEmail(email)) {
-          showNotification('Please enter a valid email address', 'error');
+        return;
+      }
+      
+      if (!isValidEmail(email)) {
+        showNotification('Please enter a valid email address', 'error');
           shakeForm();
-          return;
-        }
-        
+        return;
+      }
+      
         // Success animation
         submitBtn.innerHTML = `
           <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
@@ -300,11 +300,11 @@ document.addEventListener('DOMContentLoaded', function() {
             Joining...
           </span>
         `;
-        submitBtn.disabled = true;
+      submitBtn.disabled = true;
         submitBtn.style.background = 'var(--accent-blue)';
-        
+      
         // Simulate API call with success animation
-        setTimeout(() => {
+      setTimeout(() => {
           submitBtn.innerHTML = `
             <span style="display: inline-flex; align-items: center; gap: 0.5rem;">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -314,20 +314,20 @@ document.addEventListener('DOMContentLoaded', function() {
               Welcome to VIP Circle!
             </span>
           `;
-          submitBtn.style.background = 'var(--accent-teal)';
+        submitBtn.style.background = 'var(--accent-teal)';
           submitBtn.style.transform = 'scale(1.05)';
-          
-          showNotification(`Welcome ${name}! Check your email for VIP access details.`, 'success');
+        
+        showNotification(`Welcome ${name}! Check your email for VIP access details.`, 'success');
           
           // Confetti effect
           createConfetti();
-          
-          // Reset form after delay
-          setTimeout(() => {
-            vipForm.reset();
+        
+        // Reset form after delay
+        setTimeout(() => {
+          vipForm.reset();
             submitBtn.innerHTML = 'Join VIP Inner Circle';
-            submitBtn.disabled = false;
-            submitBtn.style.background = '';
+          submitBtn.disabled = false;
+          submitBtn.style.background = '';
             submitBtn.style.transform = '';
           }, 4000);
         }, 2000);
@@ -410,7 +410,7 @@ document.addEventListener('DOMContentLoaded', function() {
   function showNotification(message, type = 'info') {
     // Remove existing notifications
     document.querySelectorAll('.notification').forEach(n => n.remove());
-    
+
     const notification = document.createElement('div');
     notification.className = `notification notification-${type}`;
     
@@ -434,7 +434,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <button class="notification-close">&times;</button>
       </div>
     `;
-    
+
     // Enhanced styles
     notification.style.cssText = `
       position: fixed;
@@ -454,7 +454,7 @@ document.addEventListener('DOMContentLoaded', function() {
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       border: 1px solid rgba(255, 255, 255, 0.2);
     `;
-    
+
     // Type-specific styles
     const typeStyles = {
       success: {
@@ -509,13 +509,13 @@ document.addEventListener('DOMContentLoaded', function() {
     closeBtn.addEventListener('mouseleave', () => closeBtn.style.opacity = '0.7');
     
     document.body.appendChild(notification);
-    
+
     // Trigger entrance animation
     requestAnimationFrame(() => {
       notification.style.opacity = '1';
       notification.style.transform = 'translateX(0) scale(1)';
     });
-    
+
     // Auto-hide
     setTimeout(() => {
       if (document.body.contains(notification)) {
@@ -523,7 +523,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }, 6000);
   }
-  
+
   function hideNotification(notification) {
     notification.style.opacity = '0';
     notification.style.transform = 'translateX(100%) scale(0.8)';
@@ -591,7 +591,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (e.keyCode === konamiCode[konamiProgress]) {
       konamiProgress++;
       if (konamiProgress === konamiCode.length) {
-        document.body.style.filter = document.body.style.filter ? '' : 'invert(1) hue-rotate(180deg)';
+      document.body.style.filter = document.body.style.filter ? '' : 'invert(1) hue-rotate(180deg)';
         showNotification('🌙 Secret mode activated! (Konami code detected)', 'success');
         createConfetti();
         konamiProgress = 0;
@@ -939,7 +939,7 @@ function initBioAgeQuiz() {
       message = "Good! Your biological age is close to your chronological age. The Revyval System can help you reverse the aging process.";
     } else if (ageDifference <= 5) {
       message = "Your biological age shows room for improvement. The Revyval System is designed to help reverse this aging acceleration.";
-    } else {
+  } else {
       message = "Significant opportunity for transformation! The Revyval System can help you reclaim years of vitality and health.";
     }
     
